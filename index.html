@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic - Đại hội VIII - Nhóm 3</title>
+    <!-- Thêm font chữ đẹp hơn: Lora cho tiêu đề và Montserrat cho nội dung -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #1d3557;
+            --accent: #f1faee;
+            --bg-dark: #0f172a;
+            --card-bg: rgba(20, 30, 48, 0.75);
+            --text-light: #f8fafc;
+            --text-muted: #cbd5e1;
+            --success: #10b981;
+            --warning: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            /* Cập nhật nền bằng hình ảnh powerpoint người dùng cung cấp */
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('hinh-nen-powerpoint-lich-su-54.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3, h4, .section-title {
+            font-family: 'Lora', serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(180deg, rgba(230, 57, 70, 0.2) 0%, transparent 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header img {
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+            transition: transform 0.4s ease;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header img:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 50px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 45px;
+            text-align: center;
+            color: #f1faee;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CARD IMAGE STYLING */
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* KHỐI 1: BỐI CẢNH */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(230, 57, 70, 0.5);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 5px; height: 100%;
+            background: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+        }
+
+        .card h3 i {
+            color: var(--primary);
+        }
+
+        .list-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .list-item i {
+            margin-top: 5px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        /* KHỐI 2: 6 QUAN ĐIỂM - NEW CLEAN DESIGN */
+        .hex-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .hex-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .hex-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+            border-left-color: #facc15;
+        }
+
+        .hex-card .num-watermark {
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            z-index: 0;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .hex-card:hover .num-watermark {
+            color: rgba(230, 57, 70, 0.1);
+            transform: scale(1.1);
+        }
+
+        .hex-card .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hex-card i.card-icon {
+            font-size: 2rem;
+            color: #facc15;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .hex-card:hover i.card-icon {
+            transform: scale(1.2);
+        }
+
+        .hex-card p {
+            font-size: 1.05rem;
+            color: #f8fafc;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* KHỐI 3: NHẬN THỨC MỚI */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: rgba(255, 255, 255, 0.15);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px 40px 40px;
+            position: relative;
+            background: inherit;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            right: -27px;
+            background: #0f172a;
+            border: 3px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -27px;
+        }
+
+        .timeline-content {
+            padding: 25px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: rgba(230, 57, 70, 0.3);
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        /* KHỐI 4: Ý NGHĨA & THÁCH THỨC */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .pro-card, .con-card {
+            padding: 40px;
+            border-radius: 24px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--card-bg);
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .pro-card::before, .con-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 6px;
+            z-index: 2;
+        }
+        
+        .pro-card::before { background: linear-gradient(90deg, #10b981, #34d399); }
+        .con-card::before { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+        .pro-card {
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15), inset 0 0 40px rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .con-card {
+            box-shadow: 0 15px 35px rgba(239, 68, 68, 0.15), inset 0 0 40px rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .pro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(16, 185, 129, 0.3), inset 0 0 60px rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+
+        .con-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(239, 68, 68, 0.3), inset 0 0 60px rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        .pro-card h3 { color: #34d399; margin-bottom: 30px; font-size: 1.6rem; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        .con-card h3 { color: #f87171; margin-bottom: 30px; font-size: 1.6rem; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+
+        .pro-item, .con-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .pro-item:hover { background: rgba(16, 185, 129, 0.1); transform: translateX(10px); }
+        .con-item:hover { background: rgba(239, 68, 68, 0.1); transform: translateX(10px); }
+
+        .pro-item i { color: #34d399; margin-top: 5px; font-size: 1.4rem; filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.6)); }
+        .con-item i { color: #f87171; margin-top: 5px; font-size: 1.4rem; filter: drop-shadow(0 0 8px rgba(248, 113, 113, 0.6)); }
+        
+        .pro-item p, .con-item p { margin: 0; color: #f1faee; }
+
+        @media (max-width: 768px) {
+            .grid-2, .hex-grid, .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item:nth-child(even) {
+                left: 0%;
+            }
+            .timeline-icon {
+                left: 4px !important;
+            }
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 15px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ANIMATIONS & ENHANCEMENTS */
+        .text-gradient {
+            background: linear-gradient(90deg, #facc15, #f87171, #facc15);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .pulse-badge {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+        }
+
+        .highlight-word {
+            color: #fca5a5;
+            font-weight: bold;
+        }
+        
+        .quote-box {
+            position: relative;
+            z-index: 1;
+        }
+        .quote-box::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -15px; left: 10px;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.05);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <header class="header">
+        <h1 style="font-size: 2.4rem; line-height: 1.4; margin-bottom: 15px; text-transform: uppercase; text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">
+            <span style="display: block; font-size: 1.2rem; color: #facc15; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; font-weight: 600;"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-hammer"></i></span>
+            <span class="text-gradient">Đại Hội Đại Biểu Toàn Quốc Lần Thứ VIII</span>
+        </h1>
+        <h2 style="font-size: 1.4rem; line-height: 1.6; color: #fff; font-weight: 700; margin-bottom: 25px; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">
+            <span style="background: rgba(230, 57, 70, 0.8); padding: 5px 15px; border-radius: 4px; box-shadow: 0 4px 10px rgba(230,57,70,0.5);">Đảng Cộng Sản Việt Nam</span><br><br>
+            <span style="font-size: 1.15rem; color: #e2e8f0; font-weight: 400; text-transform: none;">Bước ngoặt chuyển sang thời kỳ đẩy mạnh công nghiệp hóa, hiện đại hóa</span>
+        </h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); font-weight: 300; font-style: italic; background: rgba(255,255,255,0.1); display: inline-block; padding: 5px 20px; border-radius: 20px;">
+            Thực hiện bởi: Nhóm 3
+        </p>
+    </header>
+
+    <!-- KHỐI 1 -->
+    <section class="section">
+        <h2 class="section-title">Bối Cảnh Lịch Sử</h2>
+        <div class="grid-2">
+            <div class="card">
+                <img src="file:///C:/Users/MSI/.gemini/antigravity-ide/brain/2847328f-4e20-47c2-a8c8-a40cfcb73bdb/history_hanoi_1784346042487.png" alt="Hanoi History" class="card-img">
+                <h3><i class="fa-regular fa-clock"></i> Tổng Quan</h3>
+                <div class="list-item">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div><strong>Thời gian:</strong> 28/06 - 01/07/1996</div>
+                </div>
+                <div class="list-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div><strong>Địa điểm:</strong> Thủ đô Hà Nội</div>
+                </div>
+                <div class="list-item">
+                    <i class="fa-solid fa-users"></i>
+                    <div><strong>Thành phần:</strong> 1.198 đại biểu đại diện cho hơn 2,1 triệu đảng viên.</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3><i class="fa-solid fa-globe"></i> Bối Cảnh</h3>
+                <div class="list-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <div><span class="highlight-word">Quốc tế:</span> Cách mạng KH-CN phát triển cao. CNXH hiện thực lâm vào thoái trào.</div>
+                </div>
+                <div class="list-item">
+                    <i class="fa-solid fa-flag"></i>
+                    <div><span class="highlight-word">Trong nước:</span> Đạt thắng lợi bước đầu sau 10 năm đổi mới, phá thế bao vây cô lập.</div>
+                </div>
+                <div class="list-item">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div><span class="highlight-word" style="color:#facc15;">Thách thức:</span> Vẫn là nước nghèo, xã hội còn nhiều tiêu cực.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KHỐI 2 -->
+    <section class="section">
+        <h2 class="section-title">Nội Dung Đại Hội & Nhận Thức</h2>
+        <div class="card" style="margin-bottom: 50px; text-align: center; border: 1px solid rgba(230, 57, 70, 0.5); background: linear-gradient(135deg, rgba(230, 57, 70, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%); padding: 50px 30px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3);">
+            <h3><i class="fa-solid fa-bullseye pulse-badge" style="margin: 0 auto; margin-bottom: 15px; border-radius: 50%; font-size: 2.5rem; color: var(--primary);"></i></h3>
+            <h3 style="justify-content: center; font-size: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;">Mục Tiêu & Lãnh Đạo</h3>
+            <p style="margin-bottom: 35px;">
+                <span class="badge" style="background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.4); color: #bae6fd; padding: 10px 20px; font-size: 1.05rem;"><i class="fa-solid fa-user-tie"></i> Đồng chí Đỗ Mười tiếp tục làm Tổng Bí thư</span>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #a7f3d0; padding: 10px 20px; font-size: 1.05rem;"><i class="fa-solid fa-shield"></i> Đảng tự đổi mới, chỉnh đốn</span>
+            </p>
+            <p class="quote-box" style="font-size: 1.8rem; font-family: 'Lora', serif; font-style: italic; color: #facc15; padding: 25px 40px; border-radius: 12px; border: 1px dashed rgba(250, 204, 21, 0.4); display: inline-block; background: rgba(0,0,0,0.2);">
+                "Dân giàu, nước mạnh, xã hội công bằng, văn minh"
+            </p>
+        </div>
+
+        <h3 style="text-align: center; margin: 60px 0 20px; color: #fff; font-family: 'Lora', serif; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px;">6 Quan Điểm CNH, HĐH</h3>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 50px; font-size: 1.15rem; font-style: italic;">Định hướng chiến lược phát triển kinh tế - xã hội của Đảng</p>
+        
+        <div class="hex-grid">
+            <div class="hex-card">
+                <div class="num-watermark">1</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-flag card-icon"></i>
+                    <p>Giữ vững độc lập tự chủ đi đôi mở rộng quan hệ quốc tế; lấy nội lực là chính.</p>
+                </div>
+            </div>
+            <div class="hex-card">
+                <div class="num-watermark">2</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-users card-icon"></i>
+                    <p>Là sự nghiệp toàn dân, mọi thành phần kinh tế; Kinh tế nhà nước chủ đạo.</p>
+                </div>
+            </div>
+            <div class="hex-card">
+                <div class="num-watermark">3</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-user-graduate card-icon"></i>
+                    <p>Phát huy nguồn lực con người là yếu tố cơ bản để phát triển nhanh, bền vững.</p>
+                </div>
+            </div>
+            <div class="hex-card">
+                <div class="num-watermark">4</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-microchip card-icon"></i>
+                    <p>Khoa học và công nghệ là động lực; kết hợp truyền thống và hiện đại.</p>
+                </div>
+            </div>
+            <div class="hex-card">
+                <div class="num-watermark">5</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-chart-pie card-icon"></i>
+                    <p>Lấy hiệu quả kinh tế làm chuẩn mực cơ bản để chọn dự án và công nghệ.</p>
+                </div>
+            </div>
+            <div class="hex-card">
+                <div class="num-watermark">6</div>
+                <div class="card-content">
+                    <i class="fa-solid fa-shield-halved card-icon"></i>
+                    <p>Kết hợp chặt chẽ kinh tế với quốc phòng và an ninh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KHỐI 3 -->
+    <section class="section">
+        <h2 class="section-title">Nhận Thức Mới Của Đảng</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="timeline-content">
+                    <img src="file:///C:/Users/MSI/.gemini/antigravity-ide/brain/2847328f-4e20-47c2-a8c8-a40cfcb73bdb/economy_vietnam_1784346051395.png" alt="Economy" class="card-img" style="height: 140px;">
+                    <h4>1. Kinh tế (Trọng tâm)</h4>
+                    <p>Vận hành cơ chế thị trường định hướng XHCN. Kết quả: GDP tăng 7%/năm; Công nghiệp tăng 13,5%/năm.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <div class="timeline-content">
+                    <img src="file:///C:/Users/MSI/.gemini/antigravity-ide/brain/2847328f-4e20-47c2-a8c8-a40cfcb73bdb/politics_vietnam_1784346248730.png" alt="Politics" class="card-img" style="height: 140px;">
+                    <h4>2. Hệ thống chính trị & Dân chủ</h4>
+                    <p>Nhà nước trong sạch, vững mạnh. Cán bộ là công bộc của dân. Lấy đức làm gốc (Tư tưởng HCM). Đồng chí Lê Khả Phiêu làm TBT (12-1997).</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-star"></i></div>
+                <div class="timeline-content">
+                    <img src="file:///C:/Users/MSI/.gemini/antigravity-ide/brain/2847328f-4e20-47c2-a8c8-a40cfcb73bdb/party_building_1784346257455.png" alt="Party" class="card-img" style="height: 140px;">
+                    <h4>3. Xây dựng Đảng (Hàng đầu)</h4>
+                    <p>Nghị quyết cấp bách về xây dựng Đảng (2-1999). Kiên định chủ nghĩa Mác-Lênin, không chấp nhận đa nguyên, đa đảng.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-atom"></i></div>
+                <div class="timeline-content">
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=600&auto=format&fit=crop" alt="Education & Science" class="card-img" style="height: 140px; filter: contrast(1.2) brightness(0.9);">
+                    <h4>4. Giáo dục & Khoa học</h4>
+                    <p>Giáo dục - đào tạo, KH&CN là quốc sách hàng đầu. Đào tạo con người XHCN vừa "hồng" vừa "chuyên".</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-monument"></i></div>
+                <div class="timeline-content">
+                    <img src="file:///C:/Users/MSI/.gemini/antigravity-ide/brain/2847328f-4e20-47c2-a8c8-a40cfcb73bdb/culture_vietnam_1784346061194.png" alt="Culture" class="card-img" style="height: 140px;">
+                    <h4>5. Văn hóa (Nền tảng tinh thần)</h4>
+                    <p>Xây dựng nền văn hóa tiên tiến, đậm đà bản sắc dân tộc. Văn hóa vừa là mục tiêu, vừa là động lực phát triển.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KHỐI 4 -->
+    <section class="section" style="border-bottom: none;">
+        <h2 class="section-title" style="font-size: 3rem;">Tổng Kết Thực Tiễn</h2>
+        <div class="pros-cons">
+            <div class="pro-card">
+                <h3><i class="fa-solid fa-trophy" style="color: #facc15; margin-right: 10px;"></i> Ý Nghĩa & Thành Tựu</h3>
+                <div class="pro-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p><span class="highlight-word" style="color: #a7f3d0;">Bước ngoặt:</span> Đưa đất nước sang thời kỳ đẩy mạnh CNH, HĐH.</p>
+                </div>
+                <div class="pro-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p><span class="highlight-word" style="color: #a7f3d0;">Vị thế:</span> Tạo thế và lực mới sau 15 năm đổi mới (1986-2001).</p>
+                </div>
+                <div class="pro-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p><span class="highlight-word" style="color: #a7f3d0;">Kinh tế:</span> Tăng trưởng nhảy vọt, GDP tăng gấp đôi, đạt trên 35 tỷ USD (năm 2000).</p>
+                </div>
+            </div>
+            
+            <div class="con-card">
+                <h3><i class="fa-solid fa-triangle-exclamation" style="color: #facc15; margin-right: 10px;"></i> Hạn Chế & Thách Thức</h3>
+                <div class="con-item">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p><span class="highlight-word" style="color: #fecaca;">Kinh tế:</span> Tăng trưởng chưa vững chắc, sức cạnh tranh còn thấp.</p>
+                </div>
+                <div class="con-item">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p><span class="highlight-word" style="color: #fecaca;">Mục tiêu:</span> Không đạt chỉ tiêu GDP bình quân đề ra (đạt 7% so với mục tiêu 9-10%).</p>
+                </div>
+                <div class="con-item">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p><span class="highlight-word" style="color: #fecaca;">Nguy cơ:</span> Tụt hậu về kinh tế vẫn là một thách thức lớn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / LỜI CẢM ƠN -->
+    <section class="section" style="border-top: 1px solid rgba(255, 255, 255, 0.1); border-bottom: none; text-align: center; padding: 40px 40px 60px;">
+        <div style="background: rgba(230, 57, 70, 0.1); padding: 30px; border-radius: 16px; border: 1px dashed rgba(230, 57, 70, 0.4); max-width: 800px; margin: 0 auto; transition: transform 0.3s ease;">
+            <i class="fa-solid fa-heart" style="color: #fca5a5; font-size: 2rem; margin-bottom: 15px;"></i>
+            <p style="font-size: 1.25rem; font-family: 'Lora', serif; font-style: italic; color: #f1faee; line-height: 1.8;">
+                "Dạ nhóm em xin chân thành cảm ơn cô thật nhiều ạ!"
+            </p>
+            <h4 style="margin-top: 20px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">- Đại diện Nhóm 3 -</h4>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
